@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title></title>
+
+	<style tye="text/css">
+
+		#car{
+			width:150px;
+			height:100px;
+			background-image:url(Car.png);
+			background-size:contain;
+			position:absolute;
+/*			left:100px;*/
+		}
+
+</style>
+
+</head>
+<body>
+	<div id=car></div>
+
+	<script type="text/javascript">
+		var left =0
+
+		var up =0 
+
+
+		document.addEventListener("keydown",
+			function(dog){
+				console.log(dog.key)
+				
+				if (dog.key=="a"){
+					left=left-10
+					car.style.left = left+"px"
+				}
+
+				if (dog.key=="d"){
+					left=left+10
+					car.style.left = left+"px"
+				}
+
+				if (dog.key=="s"){ 
+					up=up-10
+					car.style.up =up"px"
+
+				}
+
+
+
+
+
+
+
+			})
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Move Square with WASD</title>
+<style>
+    #square {
+        width: 100px;
+        height: 100px;
+    background-image:url(Car.png);
+        background-size:contain;
+        position:absolute;
+    }
+</style>
+</head>
+<body>
+
+<div id="square"></div>
+
+<script>
+    // Get the square element
+    var square = document.getElementById('square');
+
+    // Initial position of the square
+    var xPos = 0;
+    var yPos = 0;
+
+    // Initial speed and acceleration
+    var speed = 40;
+    var acceleration = 0.5;
+
+    // Function to move the square
+    function moveSquare(x, y) {
+        xPos += x * speed;
+        yPos += y * speed;
+        square.style.left = xPos + 'px';
+        square.style.top = yPos + 'px';
+    }
+
+    // Function to increase speed gradually
+    function increaseSpeed() {
+        if (speed < 40) { // Limit maximum speed
+            speed += acceleration;
+        }
+    }
+
+    // Function to reset speed
+    function resetSpeed() {
+        speed = 5;
+    }
+
+    // Event listeners for key presses
+    document.addEventListener('keydown', function(event) {
+        switch(event.key) {
+            case 'w':
+                moveSquare(0, -1);
+                increaseSpeed();
+                break;
+            case 'a':
+                moveSquare(-1, 0);
+                increaseSpeed();
+                break;
+            case 's':
+                moveSquare(0, 1);
+                increaseSpeed();
+                break;
+            case 'd':
+                moveSquare(1, 0);
+                increaseSpeed();
+                break;
+        }
+    });
+
+    // Event listener for key releases to reset speed
+    document.addEventListener('keyup', function(event) {
+        resetSpeed();
+    });
+</script>
+
+</body>
+</html>
