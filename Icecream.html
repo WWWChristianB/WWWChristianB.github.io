@@ -14,8 +14,10 @@
 
     #chocolatesyrup {
 
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPqlmbYfnmOqOWCZFVZpumW_gVzTZ-09V5n_2oN0L1-YvOvj1IWjUMtxMzt4Bunkp9Ces&usqp=CAU);
-        background-size: cover;
+        background-image: url(https://as2.ftcdn.net/v2/jpg/03/29/52/09/1000_F_329520990_ueV5uRqeZH5CniuqPtGT1onSMpHO0V9k.jpg);
+        background-size:contained;
+        background-color:red;
+
     }
 
     #whipedcream {
@@ -28,7 +30,7 @@
     }
 
     #sprinkles {
-        background-image: url()
+        background-image: url(https://peasandcrayons.com/wp-content/uploads/2022/04/sprinkle-vanilla-pudding-cookies-recipe-2-1-800x1200.jpg)
     }
 
     #caramel {
@@ -40,7 +42,7 @@
     }
 
     #cherry {
-        back ground-image: url();
+        background-image: url();
     }
 
     .topping {
@@ -69,31 +71,26 @@
     <script type="text/javascript">
     var image;
 
-
-
-
-
     function makeTopping() {
-        var pepp = document.createElement("pepperoni");
-        var angle = Math.floor((Math.random() * 360) + 1);
-        chocolatesyrup.style.width = "100px";
-        chocolatesyrup.style.height = "100px";
-        chocolatesyrup.style.borderRadius = "50%";
-        chocolatesyrup.style.position = "absolute";
-        chocolatesyrup.style.backgroundImage = "url(" + image + ")";
-        chocolatesyrup.style.backgroundSize = "cover";
-        chocolatesyrup.style.transform = "rotate("
-        + angle + "deg)";
+        var topping = document.createElement("div");
+        // var angle = Math.floor((Math.random() * 360) + 1);
+        topping.style.width = "100px";
+        topping.style.height = "100px";
+        topping.style.borderRadius = "50%";
+        topping.style.position = "absolute";
+        topping.style.backgroundImage = "url(" + image + ")";
+        topping.style.backgroundSize = "cover";
+        // topping.style.transform = "rotate("
+        // + angle + "deg)";
 
 
+        // icecream.addEventListener("mousemove", function(event) {
+        //     console.log(event)
 
-        icecream.addEventListener("mousemove", function(event) {
-            console.log(event)
-
-        });
+        // });
 
 
-        icecream.appendChild(chocolatesyrup);
+        icecream.appendChild();
 
         chocolatesyrup.style.left =   event.clientX - 50 + "px";
         chocolatesyrup.style.top = event.clientY - 50 + "px";

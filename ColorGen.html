@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Color Generator</title>
+<style>
+
+/*    help with chat gpt so going to add comments explaining what's happening
+
+this is all styling of the divs
+*/
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+    }
+    #color-box{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border: 2px solid black;
+    }
+
+    #color-box-2{
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        border: 2px solid black;
+    }
+}
+    #color-text {
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+
+     #color-text-2 {
+        margin-top: 20px;
+        font-size: 24px;
+        color: #333;
+    }
+    #generate-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+}
+        #generate-button-2 {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+    #generate-button:hover {
+        background-color: #0056b3;
+    }
+     #generate-button-2:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+
+    <!-- creating the divs and giving them Ids -->
+
+<div id="color-box"></div>
+<p id="color-text">Click the button to generate a random color!</p>
+<button id="generate-button">Generate Color</button>
+
+<div id="color-box-2"></div>
+<p id="color-text-2">Click the button to generate a random color!</p>
+<button id="generate-button-2">Generate Color</button>
+
+
+<script>
+    // Function to generate a random color
+
+    var color;
+    function generateRandomColor() {
+        var letters = ["0", "1", "2", "3","4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F"];
+         color = '#';
+
+        for (var i = 0; i < 6; i++) {
+
+            color = color+ letters[Math.floor(Math.random() * 16)];
+
+            
+        }
+
+        console.log(color)
+         document.body.style.backgroundColor = color
+
+    }
+
+   
+
+
+generateRandomColor()
+
+
+    // // Function to update the color box and text with a new random color
+    // function updateColor() {
+    //     var randomColor = generateRandomColor();
+    //     var colorBox = document.getElementById('color-box');
+    //     var colorText = document.getElementById('color-text');
+    //      var colorBox = document.getElementById('color-box-2');
+    //     var colorText = document.getElementById('color-text-2');
+
+    //     colorBox.style.backgroundColor = randomColor;
+    //     colorText.textContent = 'Random Color: ' + randomColor;
+    // }
+
+    // // Event listener for the generate button click
+    // document.getElementById('generate-button').addEventListener('click', function() {
+    //     updateColor();
+    // });
+
+    //  document.getElementById('generate-button-2').addEventListener('click', function() {
+    //     updateColor();
+    // });
+
+    // // Initial color generation
+    // updateColor();
+</script>
+
+</body>
+</html>
